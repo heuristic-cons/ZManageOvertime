@@ -1,0 +1,75 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZOVERTIME_REQ_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="OT_request" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Zdocnr"/>
+                </Key>
+                <Property Name="Zdocnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Overtime req nbr" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zpernr" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="Personnel no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZzAttType" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Attendance Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZzDateFrom" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Start Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZzDateTo" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="End Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZzTimeFrom" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Time From" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZzTimeTo" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Time To" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZzNote" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label="Note" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zstat" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="FIORI Overtime Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zaction" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="FIORI Action for oData requests" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zerror" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Boolean Variable (X=True, -=False, Space=Unknown)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Error1" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Error2" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Error3" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Error4" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZaatypeText" Type="Edm.String" MaxLength="25" sap:unicode="false" sap:label="A/A type text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zename" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Empl./Appl.Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zuname" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="OT_approvers" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ZzMgrPernr"/>
+                </Key>
+                <Property Name="ZzMgrPernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="App Pernr" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZzMgrEname" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Empl./Appl.Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZzMgrUname" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZzEmail" Type="Edm.String" MaxLength="241" sap:unicode="false" sap:label="Long ID/Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zlevel" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Level in approval" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zinitiator" Type="Edm.String" MaxLength="14" sap:unicode="false" sap:label="Initiator" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="OT_types" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="OvertimeType"/>
+                </Key>
+                <Property Name="OvertimeType" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Attendance Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OvertimeText" Type="Edm.String" MaxLength="25" sap:unicode="false" sap:label="A/A type text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OtHelp" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Premn" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Nachn"/>
+                    <PropertyRef Name="Vorna"/>
+                </Key>
+                <Property Name="Nachn" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Last name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vorna" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="First name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personnel No." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZOVERTIME_REQ_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="OT_requestSet" EntityType="ZOVERTIME_REQ_SRV.OT_request" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="OT_approversSet" EntityType="ZOVERTIME_REQ_SRV.OT_approvers" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="OT_typesSet" EntityType="ZOVERTIME_REQ_SRV.OT_types" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="PremnSet" EntityType="ZOVERTIME_REQ_SRV.Premn" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <FunctionImport Name="addOvertime" ReturnType="Collection(ZOVERTIME_REQ_SRV.OT_request)" EntitySet="OT_requestSet" m:HttpMethod="GET" sap:label="Add" sap:action-for="ZOVERTIME_REQ_SRV.OT_request"/>
+                <FunctionImport Name="SubmitRequest" ReturnType="ZOVERTIME_REQ_SRV.OT_request" EntitySet="OT_requestSet" m:HttpMethod="POST" sap:label="Submit" sap:action-for="ZOVERTIME_REQ_SRV.OT_request">
+                    <Parameter Name="Docnr" Type="Edm.String" Mode="In" MaxLength="10"/>
+                </FunctionImport>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZOVERTIME_REQ_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZOVERTIME_REQ_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>
