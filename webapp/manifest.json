@@ -112,7 +112,12 @@
 					"target": [
 						"object"
 					]
-				}
+				},
+				{
+				   "pattern" : "AddOTRequest",
+				   "name" : "add",
+				   "target" : "add"
+				}				
 			],
 			"targets": {
 				"worklist": {
@@ -134,7 +139,12 @@
 				"notFound": {
 					"viewName": "NotFound",
 					"viewId": "notFound"
-				}
+				},
+				"add": {
+				    "viewName": "Add",
+				    "viewId": "add",
+				   "viewLevel": 3
+				}				
 			}
 		}
 	},

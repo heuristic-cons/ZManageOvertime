@@ -179,6 +179,9 @@ sap.ui.define([
 				var oOpener=oEvent.getParameter("domRef");
 				oPopover.openBy(oOpener);
 			},
+			onAdd: function(){
+			   this.getRouter().navTo("add");
+			},
 			/* =========================================================== */
 			/* internal methods                                            */
 			/* =========================================================== */
