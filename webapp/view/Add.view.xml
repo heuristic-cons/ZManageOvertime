@@ -5,6 +5,7 @@
 	xmlns:smartfield="sap.ui.comp.smartfield"
 	xmlns:smartform="sap.ui.comp.smartform"
 	xmlns="sap.m">
+	
 	<semantic:FullscreenPage
 		id="page"
 		title="{i18n>addPageTitle}"
