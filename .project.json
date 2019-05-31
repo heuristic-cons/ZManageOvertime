@@ -13,7 +13,7 @@
       "test.html"
     ],
     "buildRequired": true,
-    "lastBuildDateTime": "Fri, 31 May 2019 05:40:08 GMT"
+    "lastBuildDateTime": "Fri, 31 May 2019 08:17:51 GMT"
   },
   "dataBinding": {
     "/webapp/view/App.view.xml": {
@@ -67,6 +67,6 @@
   },
   "deploy": {
     "destination": "FFD",
-    "name": "ZManageOvertime"
+    "name": "ZMANAGEOVERTIME"
   }
 }

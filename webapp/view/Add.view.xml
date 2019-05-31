@@ -2,11 +2,45 @@
 	controllerName="com.getronics.hr.ZManageOvertime.controller.Add"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:semantic="sap.m.semantic"
+	xmlns:smartfield="sap.ui.comp.smartfield"
+	xmlns:smartform="sap.ui.comp.smartform"
 	xmlns="sap.m">
 	<semantic:FullscreenPage
 		id="page"
 		title="{i18n>addPageTitle}"
 		showNavButton="true"
 		navButtonPress="onNavBack">
+		<semantic:content>
+			<smartform:SmartForm
+				id="form"
+				editable="true"
+				title="{i18n>addFormTitle}"
+				class="sapUiResponsiveMargin">
+				<smartform:Group
+					id="formGroup"
+					label="{i18n>formGroupLabel}">
+					<smartform:GroupElement label="AttType">
+						<smartfield:SmartField
+							id="attendType"
+							value="{ZzAttType}"/>
+					</smartform:GroupElement>
+					<smartform:GroupElement>
+						<smartfield:SmartField
+							id="dateFrom"
+							value="{ZzDateFrom}"/>
+					</smartform:GroupElement>
+					<smartform:GroupElement>
+						<smartfield:SmartField
+							id="dateTo"
+							value="{ZzDateTo}"/>
+					</smartform:GroupElement>
+					<smartform:GroupElement>
+						<smartfield:SmartField
+							id="timeFrom"
+							value="{ZzTimeFrom}"/>
+					</smartform:GroupElement>
+				</smartform:Group>
+			</smartform:SmartForm>
+		</semantic:content>
 	</semantic:FullscreenPage>
 </mvc:View>

@@ -1,0 +1,81 @@
+[{
+	"Nachn": "Nachn 1",
+	"Vorna": "Vorna 1",
+	"Pernr": "Pernr 1",
+	"__metadata": {
+		"uri": "PremnSet(Nachn='Nachn%201',Vorna='Vorna%201')",
+		"type": "ZOVERTIME_REQ_SRV.Premn"
+	}
+}, {
+	"Nachn": "Nachn 2",
+	"Vorna": "Vorna 2",
+	"Pernr": "Pernr 2",
+	"__metadata": {
+		"uri": "PremnSet(Nachn='Nachn%202',Vorna='Vorna%202')",
+		"type": "ZOVERTIME_REQ_SRV.Premn"
+	}
+}, {
+	"Nachn": "Nachn 3",
+	"Vorna": "Vorna 3",
+	"Pernr": "Pernr 3",
+	"__metadata": {
+		"uri": "PremnSet(Nachn='Nachn%203',Vorna='Vorna%203')",
+		"type": "ZOVERTIME_REQ_SRV.Premn"
+	}
+}, {
+	"Nachn": "Nachn 4",
+	"Vorna": "Vorna 4",
+	"Pernr": "Pernr 4",
+	"__metadata": {
+		"uri": "PremnSet(Nachn='Nachn%204',Vorna='Vorna%204')",
+		"type": "ZOVERTIME_REQ_SRV.Premn"
+	}
+}, {
+	"Nachn": "Nachn 5",
+	"Vorna": "Vorna 5",
+	"Pernr": "Pernr 5",
+	"__metadata": {
+		"uri": "PremnSet(Nachn='Nachn%205',Vorna='Vorna%205')",
+		"type": "ZOVERTIME_REQ_SRV.Premn"
+	}
+}, {
+	"Nachn": "Nachn 6",
+	"Vorna": "Vorna 6",
+	"Pernr": "Pernr 6",
+	"__metadata": {
+		"uri": "PremnSet(Nachn='Nachn%206',Vorna='Vorna%206')",
+		"type": "ZOVERTIME_REQ_SRV.Premn"
+	}
+}, {
+	"Nachn": "Nachn 7",
+	"Vorna": "Vorna 7",
+	"Pernr": "Pernr 7",
+	"__metadata": {
+		"uri": "PremnSet(Nachn='Nachn%207',Vorna='Vorna%207')",
+		"type": "ZOVERTIME_REQ_SRV.Premn"
+	}
+}, {
+	"Nachn": "Nachn 8",
+	"Vorna": "Vorna 8",
+	"Pernr": "Pernr 8",
+	"__metadata": {
+		"uri": "PremnSet(Nachn='Nachn%208',Vorna='Vorna%208')",
+		"type": "ZOVERTIME_REQ_SRV.Premn"
+	}
+}, {
+	"Nachn": "Nachn 9",
+	"Vorna": "Vorna 9",
+	"Pernr": "Pernr 9",
+	"__metadata": {
+		"uri": "PremnSet(Nachn='Nachn%209',Vorna='Vorna%209')",
+		"type": "ZOVERTIME_REQ_SRV.Premn"
+	}
+}, {
+	"Nachn": "Nachn 10",
+	"Vorna": "Vorna 10",
+	"Pernr": "Pernr 10",
+	"__metadata": {
+		"uri": "PremnSet(Nachn='Nachn%2010',Vorna='Vorna%2010')",
+		"type": "ZOVERTIME_REQ_SRV.Premn"
+	}
+}]

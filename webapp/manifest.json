@@ -72,7 +72,10 @@
 			},
 			"": {
 				"dataSource": "mainService",
-				"preload": true
+				"preload": true,
+				"settings": {
+					"defaultBindingMode": "TwoWay"
+							}
 			}
 		},
 		"services": {
@@ -114,10 +117,10 @@
 					]
 				},
 				{
-				   "pattern" : "AddOTRequest",
-				   "name" : "add",
-				   "target" : "add"
-				}				
+					"pattern": "AddOTRequest",
+					"name": "add",
+					"target": "add"
+				}
 			],
 			"targets": {
 				"worklist": {
@@ -141,10 +144,10 @@
 					"viewId": "notFound"
 				},
 				"add": {
-				    "viewName": "Add",
-				    "viewId": "add",
-				   "viewLevel": 3
-				}				
+					"viewName": "Add",
+					"viewId": "add",
+					"viewLevel": 3
+				}
 			}
 		}
 	},

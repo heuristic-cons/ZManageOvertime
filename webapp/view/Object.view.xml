@@ -1,4 +1,8 @@
-<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" controllerName="com.getronics.hr.ZManageOvertime.controller.Object">
+<mvc:View xmlns="sap.m" 
+          xmlns:mvc="sap.ui.core.mvc" 
+          xmlns:semantic="sap.f.semantic" 
+          xmlns:footerbar="sap.ushell.ui.footerbar" 
+          controllerName="com.getronics.hr.ZManageOvertime.controller.Object">
 
 	<semantic:SemanticPage id="page" headerPinnable="false" toggleHeaderOnTitleClick="false" busy="{objectView>/busy}" busyIndicatorDelay="{objectView>/delay}">
 
@@ -17,7 +21,7 @@
 	       
 	        <Label text="{/#OT_request/ZzAttType/@sap:label}" id="__label0"/>
 	       
-	        <Input value="{ZzAttType}" width="100%" id="__input0"/>
+	        <Input value="{ZzAttType}" width="100%" id="__input0" editable="false"/>
 	       
 	        <Label text="{/#OT_request/ZzDateFrom/@sap:label}" id="__label1"/>
 	       

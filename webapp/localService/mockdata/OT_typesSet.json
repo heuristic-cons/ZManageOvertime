@@ -1,0 +1,81 @@
+[{
+	"OvertimeType": "OvertimeType 1",
+	"OvertimeText": "OvertimeText 1",
+	"OtHelp": "OtHelp 1",
+	"__metadata": {
+		"uri": "OT_typesSet('OvertimeType%201')",
+		"type": "ZOVERTIME_REQ_SRV.OT_types"
+	}
+}, {
+	"OvertimeType": "OvertimeType 2",
+	"OvertimeText": "OvertimeText 2",
+	"OtHelp": "OtHelp 2",
+	"__metadata": {
+		"uri": "OT_typesSet('OvertimeType%202')",
+		"type": "ZOVERTIME_REQ_SRV.OT_types"
+	}
+}, {
+	"OvertimeType": "OvertimeType 3",
+	"OvertimeText": "OvertimeText 3",
+	"OtHelp": "OtHelp 3",
+	"__metadata": {
+		"uri": "OT_typesSet('OvertimeType%203')",
+		"type": "ZOVERTIME_REQ_SRV.OT_types"
+	}
+}, {
+	"OvertimeType": "OvertimeType 4",
+	"OvertimeText": "OvertimeText 4",
+	"OtHelp": "OtHelp 4",
+	"__metadata": {
+		"uri": "OT_typesSet('OvertimeType%204')",
+		"type": "ZOVERTIME_REQ_SRV.OT_types"
+	}
+}, {
+	"OvertimeType": "OvertimeType 5",
+	"OvertimeText": "OvertimeText 5",
+	"OtHelp": "OtHelp 5",
+	"__metadata": {
+		"uri": "OT_typesSet('OvertimeType%205')",
+		"type": "ZOVERTIME_REQ_SRV.OT_types"
+	}
+}, {
+	"OvertimeType": "OvertimeType 6",
+	"OvertimeText": "OvertimeText 6",
+	"OtHelp": "OtHelp 6",
+	"__metadata": {
+		"uri": "OT_typesSet('OvertimeType%206')",
+		"type": "ZOVERTIME_REQ_SRV.OT_types"
+	}
+}, {
+	"OvertimeType": "OvertimeType 7",
+	"OvertimeText": "OvertimeText 7",
+	"OtHelp": "OtHelp 7",
+	"__metadata": {
+		"uri": "OT_typesSet('OvertimeType%207')",
+		"type": "ZOVERTIME_REQ_SRV.OT_types"
+	}
+}, {
+	"OvertimeType": "OvertimeType 8",
+	"OvertimeText": "OvertimeText 8",
+	"OtHelp": "OtHelp 8",
+	"__metadata": {
+		"uri": "OT_typesSet('OvertimeType%208')",
+		"type": "ZOVERTIME_REQ_SRV.OT_types"
+	}
+}, {
+	"OvertimeType": "OvertimeType 9",
+	"OvertimeText": "OvertimeText 9",
+	"OtHelp": "OtHelp 9",
+	"__metadata": {
+		"uri": "OT_typesSet('OvertimeType%209')",
+		"type": "ZOVERTIME_REQ_SRV.OT_types"
+	}
+}, {
+	"OvertimeType": "OvertimeType 10",
+	"OvertimeText": "OvertimeText 10",
+	"OtHelp": "OtHelp 10",
+	"__metadata": {
+		"uri": "OT_typesSet('OvertimeType%2010')",
+		"type": "ZOVERTIME_REQ_SRV.OT_types"
+	}
+}]

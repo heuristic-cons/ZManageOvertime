@@ -18,6 +18,7 @@ sap.ui.define([
 
 			// Register to the add route matched
 			this.getRouter().getRoute("add").attachPatternMatched(this._onRouteMatched, this);
+			this.getView().byId("page").bindElement("/");
 		},
 
 		/* =========================================================== */
@@ -25,10 +26,44 @@ sap.ui.define([
 		/* =========================================================== */
 
 		_onRouteMatched: function() {
-
-			//here goes your logic which will be executed when the "add" route is hit
-			//will be done within the next unit
-		
+			// register for metadata loaded events
+			var oModel = this.getModel();
+			oModel.metadataLoaded().then(this._onMetadataLoaded.bind(this));
+		},
+		_onMetadataLoaded: function () {
+			// create default properties
+			var oProperties = {
+				Zdocnr             : "",
+				Zpernr             : "",
+				ZzAttType          : "",
+				ZzDateFrom         : "31.05.2019",
+				ZzDateTo           : "",
+				ZzTimeFrom         : "",
+				ZzTimeTo           : "",
+				ZzNote             : "",
+				Zstat              : "",
+				Zaction            : "",
+				Zerror             : "",
+				Error1             : "",  
+				Error2             : "",
+				Error3             : "",
+				Error4             : "",
+				ZaatypeText        : "",
+				Zename             : "",
+				Zuname             : "",
+				ZstatText          : "",
+				ZSaveEnabled       : "true",
+				ZSubmitEnabled     : "true"
+			};
+            // sap.m.MessageToast.show(oProperties.ZzDateFrom.toString());
+			// create new entry in the model
+			var oModel = this.getModel();
+			var oContext = oModel.createEntry("/OT_RequestSet", {
+				properties: oProperties
+			});
+			
+			// bind the view to the new entry
+			this.getView().setBindingContext(oContext);
 		},
 
 		/**

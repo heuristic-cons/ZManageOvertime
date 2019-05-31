@@ -1,0 +1,111 @@
+[{
+	"ZzMgrPernr": "ZzMgrPernr 1",
+	"ZzMgrEname": "ZzMgrEname 1",
+	"ZzMgrUname": "ZzMgrUname 1",
+	"ZzEmail": "ZzEmail 1",
+	"Zlevel": "Zlevel 1",
+	"Zinitiator": "Zinitiator 1",
+	"__metadata": {
+		"uri": "OT_approversSet('ZzMgrPernr%201')",
+		"type": "ZOVERTIME_REQ_SRV.OT_approvers"
+	}
+}, {
+	"ZzMgrPernr": "ZzMgrPernr 2",
+	"ZzMgrEname": "ZzMgrEname 2",
+	"ZzMgrUname": "ZzMgrUname 2",
+	"ZzEmail": "ZzEmail 2",
+	"Zlevel": "Zlevel 2",
+	"Zinitiator": "Zinitiator 2",
+	"__metadata": {
+		"uri": "OT_approversSet('ZzMgrPernr%202')",
+		"type": "ZOVERTIME_REQ_SRV.OT_approvers"
+	}
+}, {
+	"ZzMgrPernr": "ZzMgrPernr 3",
+	"ZzMgrEname": "ZzMgrEname 3",
+	"ZzMgrUname": "ZzMgrUname 3",
+	"ZzEmail": "ZzEmail 3",
+	"Zlevel": "Zlevel 3",
+	"Zinitiator": "Zinitiator 3",
+	"__metadata": {
+		"uri": "OT_approversSet('ZzMgrPernr%203')",
+		"type": "ZOVERTIME_REQ_SRV.OT_approvers"
+	}
+}, {
+	"ZzMgrPernr": "ZzMgrPernr 4",
+	"ZzMgrEname": "ZzMgrEname 4",
+	"ZzMgrUname": "ZzMgrUname 4",
+	"ZzEmail": "ZzEmail 4",
+	"Zlevel": "Zlevel 4",
+	"Zinitiator": "Zinitiator 4",
+	"__metadata": {
+		"uri": "OT_approversSet('ZzMgrPernr%204')",
+		"type": "ZOVERTIME_REQ_SRV.OT_approvers"
+	}
+}, {
+	"ZzMgrPernr": "ZzMgrPernr 5",
+	"ZzMgrEname": "ZzMgrEname 5",
+	"ZzMgrUname": "ZzMgrUname 5",
+	"ZzEmail": "ZzEmail 5",
+	"Zlevel": "Zlevel 5",
+	"Zinitiator": "Zinitiator 5",
+	"__metadata": {
+		"uri": "OT_approversSet('ZzMgrPernr%205')",
+		"type": "ZOVERTIME_REQ_SRV.OT_approvers"
+	}
+}, {
+	"ZzMgrPernr": "ZzMgrPernr 6",
+	"ZzMgrEname": "ZzMgrEname 6",
+	"ZzMgrUname": "ZzMgrUname 6",
+	"ZzEmail": "ZzEmail 6",
+	"Zlevel": "Zlevel 6",
+	"Zinitiator": "Zinitiator 6",
+	"__metadata": {
+		"uri": "OT_approversSet('ZzMgrPernr%206')",
+		"type": "ZOVERTIME_REQ_SRV.OT_approvers"
+	}
+}, {
+	"ZzMgrPernr": "ZzMgrPernr 7",
+	"ZzMgrEname": "ZzMgrEname 7",
+	"ZzMgrUname": "ZzMgrUname 7",
+	"ZzEmail": "ZzEmail 7",
+	"Zlevel": "Zlevel 7",
+	"Zinitiator": "Zinitiator 7",
+	"__metadata": {
+		"uri": "OT_approversSet('ZzMgrPernr%207')",
+		"type": "ZOVERTIME_REQ_SRV.OT_approvers"
+	}
+}, {
+	"ZzMgrPernr": "ZzMgrPernr 8",
+	"ZzMgrEname": "ZzMgrEname 8",
+	"ZzMgrUname": "ZzMgrUname 8",
+	"ZzEmail": "ZzEmail 8",
+	"Zlevel": "Zlevel 8",
+	"Zinitiator": "Zinitiator 8",
+	"__metadata": {
+		"uri": "OT_approversSet('ZzMgrPernr%208')",
+		"type": "ZOVERTIME_REQ_SRV.OT_approvers"
+	}
+}, {
+	"ZzMgrPernr": "ZzMgrPernr 9",
+	"ZzMgrEname": "ZzMgrEname 9",
+	"ZzMgrUname": "ZzMgrUname 9",
+	"ZzEmail": "ZzEmail 9",
+	"Zlevel": "Zlevel 9",
+	"Zinitiator": "Zinitiator 9",
+	"__metadata": {
+		"uri": "OT_approversSet('ZzMgrPernr%209')",
+		"type": "ZOVERTIME_REQ_SRV.OT_approvers"
+	}
+}, {
+	"ZzMgrPernr": "ZzMgrPernr 10",
+	"ZzMgrEname": "ZzMgrEname 10",
+	"ZzMgrUname": "ZzMgrUname 10",
+	"ZzEmail": "ZzEmail 10",
+	"Zlevel": "Zlevel 10",
+	"Zinitiator": "Zinitiator 10",
+	"__metadata": {
+		"uri": "OT_approversSet('ZzMgrPernr%2010')",
+		"type": "ZOVERTIME_REQ_SRV.OT_approvers"
+	}
+}]
