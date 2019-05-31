@@ -1,26 +1,48 @@
-<mvc:View
-	controllerName="com.getronics.hr.ZManageOvertime.controller.Object"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:semantic="sap.f.semantic"
-	xmlns:footerbar="sap.ushell.ui.footerbar">
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" controllerName="com.getronics.hr.ZManageOvertime.controller.Object">
 
-	<semantic:SemanticPage
-		id="page"
-		headerPinnable="false"
-		toggleHeaderOnTitleClick="false"
-		busy="{objectView>/busy}"
-		busyIndicatorDelay="{objectView>/delay}">
+	<semantic:SemanticPage id="page" headerPinnable="false" toggleHeaderOnTitleClick="false" busy="{objectView>/busy}" busyIndicatorDelay="{objectView>/delay}">
 
 		<semantic:titleHeading>
-			<Title text="{Zdocnr}" />
+			<Title text="{Zdocnr} {ZaatypeText}"/>
 		</semantic:titleHeading>
 
 		<semantic:headerContent>
-			<ObjectNumber
-			/>
+			<ObjectNumber>
+			</ObjectNumber>
 		</semantic:headerContent>
-
+		
+        <form:SimpleForm xmlns:form="sap.ui.layout.form" id="simpleFormChange">
+	       
+	    <form:content>
+	       
+	        <Label text="{/#OT_request/ZzAttType/@sap:label}" id="__label0"/>
+	       
+	        <Input value="{ZzAttType}" width="100%" id="__input0"/>
+	       
+	        <Label text="{/#OT_request/ZzDateFrom/@sap:label}" id="__label1"/>
+	       
+	        <DatePicker value="{ZzDateFrom}" width="100%" id="__picker0"/>
+	       
+	        <Label text="{/#OT_request/ZzTimeFrom/@sap:label}" id="__label3"/>
+	       
+	        <TimePicker value="{ZzTimeFrom}" displayFormat="h:mm:ss a" localeId="en-US" placeholderSymbol="-" mask="h9:59:59 AB" id="__picker2"/>
+	       
+	        <Label text="{/#OT_request/ZzDateTo/@sap:label}" id="__label4"/>
+	       
+	        <DatePicker value="{ZzDateTo}" width="100%" id="__picker3"/>
+	       
+	        <Label text="{/#OT_request/ZzTimeTo/@sap:label}" id="__label5"/>
+	       
+	        <TimePicker value="{ZzTimeTo}" displayFormat="h:mm:ss a" localeId="en-US" placeholderSymbol="-" mask="h9:59:59 AB" id="__picker4"/>
+	       
+	        <Label text="{/#OT_request/ZzNote/@sap:label}" id="__label6"/>
+	       
+	       <TextArea value="{ZzNote}" id="__area1" maxLength="255" />
+	       
+	    </form:content>
+	       
+	    </form:SimpleForm>			
+        
 		<semantic:sendEmailAction>
 			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
 		</semantic:sendEmailAction>
@@ -30,7 +52,7 @@
 		</semantic:shareInJamAction>
 
 		<semantic:saveAsTileAction>
-			<footerbar:AddBookmarkButton id ="shareTile" title="{objectView>/saveAsTileTitle}" />
+			<footerbar:AddBookmarkButton id="shareTile" title="{objectView>/saveAsTileTitle}"/>
 		</semantic:saveAsTileAction>
 
 	</semantic:SemanticPage>

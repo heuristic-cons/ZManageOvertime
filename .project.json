@@ -12,7 +12,8 @@
     "excludedFiles": [
       "test.html"
     ],
-    "buildRequired": true
+    "buildRequired": true,
+    "lastBuildDateTime": "Fri, 31 May 2019 05:40:08 GMT"
   },
   "dataBinding": {
     "/webapp/view/App.view.xml": {
@@ -48,7 +49,7 @@
   "mockpreview": {
     "mockUri": "/sap/opu/odata/sap/ZOVERTIME_REQ_SRV",
     "metadataFilePath": "",
-    "loadJSONFiles": false,
+    "loadJSONFiles": true,
     "loadCustomRequests": false,
     "mockRequestsFilePath": ""
   },
@@ -63,5 +64,9 @@
     "notifyBeforePushLevel": "Error",
     "blockPush": false,
     "blockPushLevel": "Error"
+  },
+  "deploy": {
+    "destination": "FFD",
+    "name": "ZManageOvertime"
   }
 }

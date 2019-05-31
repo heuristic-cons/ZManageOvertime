@@ -12,6 +12,11 @@ sap.ui.define([
 		return BaseController.extend("com.getronics.hr.ZManageOvertime.controller.Worklist", {
 
 			formatter: formatter,
+			_mFilters: {
+				saved     : [new Filter("Zstat", "EQ", "1")],
+				submitted : [new Filter("Zstat", "EQ", "2")],
+				approved  : [new Filter("Zstat", "EQ", "3")]
+			},
 
 			/* =========================================================== */
 			/* lifecycle methods                                           */
@@ -25,7 +30,6 @@ sap.ui.define([
 				var oViewModel,
 					iOriginalBusyDelay,
 					oTable = this.byId("table");
-
 				// Put down worklist table's original value for busy indicator delay,
 				// so it can be restored later on. Busy handling on the table is
 				// taken care of by the table itself.
@@ -41,7 +45,10 @@ sap.ui.define([
 					shareSendEmailSubject: this.getResourceBundle().getText("shareSendEmailWorklistSubject"),
 					shareSendEmailMessage: this.getResourceBundle().getText("shareSendEmailWorklistMessage", [location.href]),
 					tableNoDataText : this.getResourceBundle().getText("tableNoDataText"),
-					tableBusyDelay : 0
+					tableBusyDelay : 0,
+					saved : 0,
+					submitted : 0,
+					approved : 0
 				});
 				this.setModel(oViewModel, "worklistView");
 
@@ -77,11 +84,24 @@ sap.ui.define([
 				// update the worklist's object counter after the table update
 				var sTitle,
 					oTable = oEvent.getSource(),
-					iTotalItems = oEvent.getParameter("total");
+					iTotalItems = oEvent.getParameter("total"),
+					oViewModel = this.getModel("worklistView"),
+					oModel = this.getModel();
 				// only update the counter if the length is final and
 				// the table is not empty
 				if (iTotalItems && oTable.getBinding("items").isLengthFinal()) {
 					sTitle = this.getResourceBundle().getText("worklistTableTitleCount", [iTotalItems]);
+					
+					jQuery.each(this._mFilters, function (sKey, oFilter)
+					{
+						oModel.read("/OT_requestSet/$count",  {
+							filters: oFilter,
+							success: function(oData){
+								var sPath = "/" + sKey;
+								oViewModel.setProperty(sPath, oData);
+							}
+						});
+					});
 				} else {
 					sTitle = this.getResourceBundle().getText("worklistTableTitle");
 				}
@@ -145,7 +165,20 @@ sap.ui.define([
 				var oTable = this.byId("table");
 				oTable.getBinding("items").refresh();
 			},
-
+			onQuickFilter : function(oEvent){
+				var sKey = oEvent.getParameter("key");
+				var oFilter = this._mFilters[sKey];
+				var oTable = this.byId("table");
+				
+				var oBinding = oTable.getBinding("items");
+				    oBinding.filter(oFilter);
+			},
+			onShowDetailPopover : function(oEvent){
+				var oPopover = this.byId("OTPop");
+				oPopover.bindElement(oEvent.getSource().getBindingContext().getPath());
+				var oOpener=oEvent.getParameter("domRef");
+				oPopover.openBy(oOpener);
+			},
 			/* =========================================================== */
 			/* internal methods                                            */
 			/* =========================================================== */

@@ -27,6 +27,7 @@
                 <Property Name="ZaatypeText" Type="Edm.String" MaxLength="25" sap:unicode="false" sap:label="A/A type text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Zename" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Empl./Appl.Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Zuname" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZstatText" Type="Edm.String" MaxLength="60" sap:unicode="false" sap:label="Overtime Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
             </EntityType>
             <EntityType Name="OT_approvers" sap:content-version="1">
                 <Key>

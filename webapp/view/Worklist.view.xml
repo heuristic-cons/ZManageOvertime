@@ -1,80 +1,80 @@
-<mvc:View
-	controllerName="com.getronics.hr.ZManageOvertime.controller.Worklist"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:semantic="sap.f.semantic"
-	xmlns:footerbar="sap.ushell.ui.footerbar">
-
-	<semantic:SemanticPage
-		id="page"
-		headerPinnable="false"
-		toggleHeaderOnTitleClick="false">
-
+<mvc:View controllerName="com.getronics.hr.ZManageOvertime.controller.Worklist" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:l="sap.ui.layout" xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield">
+	<semantic:SemanticPage id="page" headerPinnable="false" toggleHeaderOnTitleClick="false">
 		<semantic:titleHeading>
-			<Title text="{i18n>worklistTitle}" />
+			<Title text="{i18n>worklistTitle}"/>
 		</semantic:titleHeading>
-
 		<semantic:content>
-			<Table
-				id="table"
-				width="auto"
-				items="{
-					path: '/OT_requestSet',
-					sorter: {
-						path: 'Zdocnr',
-						descending: false
-					}
-				}"
-				noDataText="{worklistView>/tableNoDataText}"
-				busyIndicatorDelay="{worklistView>/tableBusyDelay}"
-				growing="true"
-				growingScrollToLoad="true"
-				updateFinished="onUpdateFinished">
-
-				<headerToolbar>
-					<Toolbar>
-						<Title id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
-						<ToolbarSpacer />
-						<SearchField
-							id="searchField"
-							tooltip="{i18n>worklistSearchTooltip}"
-							search="onSearch"
-							width="auto">
-						</SearchField>
-					</Toolbar>
-				</headerToolbar>
-
-				<columns>
-					<Column id="nameColumn">
-						<Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
-					</Column>
-				</columns>
-
+			<IconTabBar id="idIconTabBar" select="onQuickFilter" class="sapUiResponsiveContentPadding">
 				<items>
-					<ColumnListItem
-						type="Navigation"
-						press="onPress">
-						<cells>
-							<ObjectIdentifier
-								title="{Zdocnr}"/>
-						</cells>
-					</ColumnListItem>
+					<IconTabFilter showAll="true" count="{i18n>allProducts}" text="{i18n>worklistTableTitle}" key="All"/>
+					<IconTabSeparator/>
+					<IconTabFilter icon="sap-icon://document" count="{worklistView>/saved}" text="{i18n>statusSaved}" key="saved"/>
+					<IconTabFilter icon="sap-icon://status-in-process" count="{worklistView>/submitted}" iconColor="Critical" text="{i18n>statusSubmit}"
+						key="submitted"/>
+					<IconTabFilter icon="sap-icon://accept" count="{worklistView>/approved}" iconColor="Positive" text="{i18n>statusApproved}" key="approved"/>
 				</items>
-			</Table>
+				<content>
+					<Table id="table" width="auto" items="{ path: '/OT_requestSet', sorter: { path: 'Zdocnr', descending: false } }"
+						noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+						updateFinished="onUpdateFinished">
+						<headerToolbar>
+							<Toolbar>
+								<Title id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
+								<ToolbarSpacer/>
+								<SearchField id="searchField" tooltip="{i18n>worklistSearchTooltip}" search="onSearch" width="auto"></SearchField>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column id="nameColumn">
+								<Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
+							</Column>
+							<Column id="attTypeText" demandPopin="true" minScreenWidth="Tablet">
+								<Text text="{i18n>tableAttTypeColumnTitle}" id="attTypeColumnTitle"/>
+							</Column>
+							<Column id="statusColumn" minScreenWidth="Tablet">
+								<Text text="{i18n>tableStatColumnTitle}" id="statColumnTitle"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Navigation" press="onPress">
+								<cells>
+									<ObjectIdentifier title="{Zdocnr}" text="{ZzNote}" titleActive="true" titlePress="onShowDetailPopover"/>
+									<Text text="{ZaatypeText}"/>
+									<Text text="{ZstatText}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</IconTabBar>
 		</semantic:content>
-
 		<semantic:sendEmailAction>
 			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
 		</semantic:sendEmailAction>
-
 		<semantic:shareInJamAction>
 			<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press="onShareInJamPress"/>
 		</semantic:shareInJamAction>
-
 		<semantic:saveAsTileAction>
-			<footerbar:AddBookmarkButton id ="shareTile" title="{worklistView>/saveAsTileTitle}" />
+			<footerbar:AddBookmarkButton id="shareTile" title="{worklistView>/saveAsTileTitle}"/>
 		</semantic:saveAsTileAction>
-
+		<semantic:dependents>
+			<ResponsivePopover id="OTPop" title="{i18n>dates}" class="sapUIPopWithPadding">
+				<content>
+					<l:Grid>
+						<l:content>
+							<smartForm:SmartForm id="smartForm">
+								<smartForm:Group label="{/#OT_request/ZzDateFrom/@sap:label}">
+									<smartForm:GroupElement>
+										<smartField:SmartField value="{path: 'ZzDateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' }}" />
+									</smartForm:GroupElement>
+								</smartForm:Group>
+							</smartForm:SmartForm>
+						</l:content>
+					</l:Grid>
+				</content>
+			</ResponsivePopover>
+		</semantic:dependents>
 	</semantic:SemanticPage>
-
 </mvc:View>
