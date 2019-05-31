@@ -62,17 +62,26 @@
 		<semantic:dependents>
 			<ResponsivePopover id="OTPop" title="{i18n>dates}" class="sapUIPopWithPadding">
 				<content>
-					<l:Grid>
-						<l:content>
+					<!--<l:Grid>-->
+						<!--<l:content>-->
 							<smartForm:SmartForm id="smartForm">
-								<smartForm:Group label="{/#OT_request/ZzDateFrom/@sap:label}">
+								<smartForm:Group label="{i18n>details}">
 									<smartForm:GroupElement>
-										<smartField:SmartField value="{path: 'ZzDateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' }}" />
+										<smartField:SmartField value="{path: 'ZzDateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' }}"/>
+									</smartForm:GroupElement>
+									<smartForm:GroupElement>										
+										<smartField:SmartField value="{ZzTimeFrom}" />										
+									</smartForm:GroupElement>
+									<smartForm:GroupElement>									
+										<smartField:SmartField value="{path: 'ZzDateTo', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' }}" />
+									</smartForm:GroupElement>
+									<smartForm:GroupElement>
+										<smartField:SmartField value="{ZzTimeTo}" />	
 									</smartForm:GroupElement>
 								</smartForm:Group>
 							</smartForm:SmartForm>
-						</l:content>
-					</l:Grid>
+						<!--</l:content>-->
+					<!--</l:Grid>-->
 				</content>
 			</ResponsivePopover>
 		</semantic:dependents>
