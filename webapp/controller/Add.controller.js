@@ -57,7 +57,7 @@ sap.ui.define([
 			};
 			// create new entry in the model
 			var oModel = this.getModel();
-			var oContext = oModel.createEntry("/OT_RequestSet", {
+			var oContext = oModel.createEntry("/OT_requestSet", {
 				properties: oProperties
 			});
 			
