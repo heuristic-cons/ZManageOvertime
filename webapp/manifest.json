@@ -1,6 +1,6 @@
 {
 	"_version": "1.9.0",
-	"sap.app": {
+	"sap.app": { 
 		"id": "com.getronics.hr.ZManageOvertime",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",

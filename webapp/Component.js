@@ -6,7 +6,7 @@ sap.ui.define([
 		"com/getronics/hr/ZManageOvertime/controller/ErrorHandler"
 	], function (UIComponent, Device, models, ErrorHandler) {
 		"use strict";
-
+ 
 		return UIComponent.extend("com.getronics.hr.ZManageOvertime.Component", {
 
 			metadata : {
