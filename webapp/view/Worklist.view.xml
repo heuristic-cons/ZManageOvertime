@@ -4,7 +4,7 @@
 	<semantic:SemanticPage id="page" headerPinnable="false" toggleHeaderOnTitleClick="false">
 		<semantic:titleHeading> 
 			<Title text="{i18n>worklistTitle}"/>
-		</semantic:titleHeading>
+		</semantic:titleHeading> 
 		<semantic:content>
 			<IconTabBar id="idIconTabBar" select="onQuickFilter" class="sapUiResponsiveContentPadding">
 				<items>

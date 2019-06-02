@@ -15,7 +15,7 @@ sap.ui.define([
 		 * Called when the add controller is instantiated.
 		 * @public
 		 */
-		onInit: function() {
+		onInit: function() { 
 			// Register to the add route matched
 			this.getRouter().getRoute("add").attachPatternMatched(this._onRouteMatched, this);
 			this.getView().byId("page").bindElement("/");
