@@ -18,7 +18,7 @@ sap.ui.define([
 		onInit: function() { 
 			// Register to the add route matched
 			this.getRouter().getRoute("add").attachPatternMatched(this._onRouteMatched, this);
-			this.getView().byId("page").bindElement("/");
+			// this.getView().byId("page").bindElement("/OT_request('4')");
 		},
 
 		/* =========================================================== */
@@ -36,7 +36,7 @@ sap.ui.define([
 				Zdocnr             : "",
 				Zpernr             : "",
 				ZzAttType          : "",
-				ZzDateFrom         : "31.05.2019",
+				ZzDateFrom         : "",
 				ZzDateTo           : "",
 				ZzTimeFrom         : "",
 				ZzTimeTo           : "",
@@ -55,7 +55,6 @@ sap.ui.define([
 				ZSaveEnabled       : "true",
 				ZSubmitEnabled     : "true"
 			};
-            // sap.m.MessageToast.show(oProperties.ZzDateFrom.toString());
 			// create new entry in the model
 			var oModel = this.getModel();
 			var oContext = oModel.createEntry("/OT_RequestSet", {
