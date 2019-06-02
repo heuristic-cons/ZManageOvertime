@@ -14,7 +14,7 @@
 		<semantic:content>
 			<smartform:SmartForm
 				id="form"
-				editable="true"
+				editable="{ZEditable}"
 				title="{i18n>addFormTitle}"
 				class="sapUiResponsiveMargin">
 				<smartform:Group
@@ -23,12 +23,17 @@
 					<smartform:GroupElement label="AttType">
 						<smartfield:SmartField
 							id="attendType"
-							value="{ZzAttType}"/>
+							value="{ZzAttType}">
+						</smartfield:SmartField>
 					</smartform:GroupElement>
 					<smartform:GroupElement>
 						<smartfield:SmartField
 							id="dateFrom"
-							value="{ZzDateFrom}"/>
+							value="{ZzDateFrom}">
+						<smartfield:configuration>
+							<smartfield:Configuration controlType="datePicker"/>
+						</smartfield:configuration>								
+						</smartfield:SmartField>
 					</smartform:GroupElement>
 					<smartform:GroupElement>
 						<smartfield:SmartField
@@ -43,5 +48,11 @@
 				</smartform:Group>
 			</smartform:SmartForm>
 		</semantic:content>
+		<semantic:saveAction>
+			<semantic:SaveAction id="save" press="onSave" enabled="{ZSaveEnabled}"/>
+		</semantic:saveAction>
+		<semantic:cancelAction>
+			<semantic:CancelAction id="cancel" press="onCancel"/>
+		</semantic:cancelAction>
 	</semantic:FullscreenPage>
 </mvc:View>

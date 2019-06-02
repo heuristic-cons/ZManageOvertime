@@ -12,7 +12,7 @@
                 <Property Name="Zdocnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Overtime req nbr" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Zpernr" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="Personnel no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="ZzAttType" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Attendance Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="ZzDateFrom" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Start Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZzDateFrom" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Start Date" sap:creatable="true" sap:updatable="true" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="ZzDateTo" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="End Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="ZzTimeFrom" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Time From" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="ZzTimeTo" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Time To" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>

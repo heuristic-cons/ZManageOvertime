@@ -33,9 +33,9 @@ sap.ui.define([
 		_onMetadataLoaded: function () {
 			// create default properties
 			var oProperties = {
-				Zdocnr             : "",
+/*				Zdocnr             : "",
 				Zpernr             : "",
-				ZzAttType          : "",
+				ZzAttType          : "1",
 				ZzDateFrom         : "",
 				ZzDateTo           : "",
 				ZzTimeFrom         : "",
@@ -51,7 +51,7 @@ sap.ui.define([
 				ZaatypeText        : "",
 				Zename             : "",
 				Zuname             : "",
-				ZstatText          : "",
+				ZstatText          : "",*/
 				ZSaveEnabled       : "true",
 				ZSubmitEnabled     : "true"
 			};
