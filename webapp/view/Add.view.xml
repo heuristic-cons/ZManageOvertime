@@ -30,11 +30,14 @@
 						<smartfield:SmartField
 							id="dateFrom"
 							value="{ZzDateFrom}">
-						<smartfield:configuration>
-							<smartfield:Configuration controlType="datePicker"/>
-						</smartfield:configuration>								
 						</smartfield:SmartField>
 					</smartform:GroupElement>
+					<smartform:GroupElement>
+						<smartfield:SmartField
+							id="timeFrom"
+							value="{ZzTimeFrom}">
+						</smartfield:SmartField>
+					</smartform:GroupElement>					
 					<smartform:GroupElement>
 						<smartfield:SmartField
 							id="dateTo"
@@ -42,9 +45,14 @@
 					</smartform:GroupElement>
 					<smartform:GroupElement>
 						<smartfield:SmartField
-							id="timeFrom"
-							value="{ZzTimeFrom}"/>
+							id="timeTo"
+							value="{ZzTimeTo}"/>
 					</smartform:GroupElement>
+					<smartform:GroupElement>
+						<smartfield:SmartField
+							id="note"
+							value="{ZzNote}"/>
+					</smartform:GroupElement>					
 				</smartform:Group>
 			</smartform:SmartForm>
 		</semantic:content>

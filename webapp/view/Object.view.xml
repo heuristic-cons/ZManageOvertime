@@ -1,6 +1,8 @@
 <mvc:View xmlns="sap.m" 
           xmlns:mvc="sap.ui.core.mvc" 
           xmlns:semantic="sap.f.semantic" 
+	      xmlns:smartfield="sap.ui.comp.smartfield"
+		  xmlns:smartform="sap.ui.comp.smartform"          
           xmlns:footerbar="sap.ushell.ui.footerbar" 
           controllerName="com.getronics.hr.ZManageOvertime.controller.Object">
 
@@ -16,7 +18,7 @@
 		</semantic:headerContent>
 		
 	
-        <form:SimpleForm xmlns:form="sap.ui.layout.form" id="simpleFormChange">
+ <!--       <form:SimpleForm xmlns:form="sap.ui.layout.form" id="simpleFormChange">
 	       
 	    <form:content>
 	       
@@ -46,8 +48,52 @@
 	       
 	    </form:content>
 	       
-	    </form:SimpleForm>			
-        
+	    </form:SimpleForm>			-->
+		<semantic:content>
+			<smartform:SmartForm
+				id="form"
+				editable="{ZEditable}"
+				title="{i18n>addFormTitle}"
+				class="sapUiResponsiveMargin">
+				<smartform:Group
+					id="formGroup"
+					label="{i18n>formGroupLabel}">
+					<smartform:GroupElement label="AttType">
+						<smartfield:SmartField
+							id="attendType"
+							value="{ZzAttType}">
+						</smartfield:SmartField>
+					</smartform:GroupElement>
+					<smartform:GroupElement>
+						<smartfield:SmartField
+							id="dateFrom"
+							value="{ZzDateFrom}">
+						</smartfield:SmartField>
+					</smartform:GroupElement>
+					<smartform:GroupElement>
+						<smartfield:SmartField
+							id="timeFrom"
+							value="{ZzTimeFrom}">
+						</smartfield:SmartField>
+					</smartform:GroupElement>					
+					<smartform:GroupElement>
+						<smartfield:SmartField
+							id="dateTo"
+							value="{ZzDateTo}"/>
+					</smartform:GroupElement>
+					<smartform:GroupElement>
+						<smartfield:SmartField
+							id="timeTo"
+							value="{ZzTimeTo}"/>
+					</smartform:GroupElement>
+					<smartform:GroupElement>
+						<smartfield:SmartField
+							id="note"
+							value="{ZzNote}"/>
+					</smartform:GroupElement>					
+				</smartform:Group>
+			</smartform:SmartForm>
+		</semantic:content>        
 		<semantic:sendEmailAction>
 			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
 		</semantic:sendEmailAction>

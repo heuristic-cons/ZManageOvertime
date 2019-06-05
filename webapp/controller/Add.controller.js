@@ -20,6 +20,20 @@ sap.ui.define([
 			this.getRouter().getRoute("add").attachPatternMatched(this._onRouteMatched, this);
 			// this.getView().byId("page").bindElement("/OT_request('4')");
 		},
+		/**
+		 * Event handler for the cancel action
+		 * @public
+		 */
+		onCancel: function() {
+			this.onNavBack();
+		},
+		/**
+		 * Event handler for the save action
+		 * @public
+		 */
+		onSave: function() {
+			this.getModel().submitChanges();
+		},
 
 		/* =========================================================== */
 		/* event handlers                                              */
@@ -52,8 +66,8 @@ sap.ui.define([
 				Zename             : "",
 				Zuname             : "",
 				ZstatText          : "",*/
-				ZSaveEnabled       : "true",
-				ZSubmitEnabled     : "true"
+				ZSaveEnabled       : "X",
+				ZSubmitEnabled     : "X"
 			};
 			// create new entry in the model
 			var oModel = this.getModel();
@@ -72,6 +86,8 @@ sap.ui.define([
 		 * @public
 		 */
 		onNavBack : function() {
+			// discard new product from model.
+			this.getModel().deleteCreatedEntry(this._oContext);
 
 			var oHistory = History.getInstance(),
 				sPreviousHash = oHistory.getPreviousHash();
