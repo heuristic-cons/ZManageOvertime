@@ -2,7 +2,7 @@ sap.ui.define([
 	"com/getronics/hr/ZManageOvertime/controller/BaseController",
 	"sap/ui/core/routing/History"
 ], function(BaseController, History) {
-	"use strict";
+	"use strict"; 
 
 	return BaseController.extend("com.getronics.hr.ZManageOvertime.controller.Add", {
 
