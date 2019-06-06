@@ -47,37 +47,17 @@ sap.ui.define([
 		_onMetadataLoaded: function () {
 			// create default properties
 			var oProperties = {
-/*				Zdocnr             : "",
-				Zpernr             : "",
-				ZzAttType          : "1",
-				ZzDateFrom         : "",
-				ZzDateTo           : "",
-				ZzTimeFrom         : "",
-				ZzTimeTo           : "",
-				ZzNote             : "",
-				Zstat              : "",
-				Zaction            : "",
-				Zerror             : "",
-				Error1             : "",  
-				Error2             : "",
-				Error3             : "",
-				Error4             : "",
-				ZaatypeText        : "",
-				Zename             : "",
-				Zuname             : "",
-				ZstatText          : "",*/
-/*				ZSaveEnabled       : "X",
-				ZSubmitEnabled     : "X"*/
+				Zaction            : "SAVE"
 			};
 			// create new entry in the model
 			var oModel = this.getModel();
-			var oContext = oModel.createEntry("/OT_requestSet", {
+			this._oContext = oModel.createEntry("/OT_requestSet", {
 				properties: oProperties,
                 success: this._onCreateSuccess.bind(this)				
 			});
 			
 			// bind the view to the new entry
-			this.getView().setBindingContext(oContext);
+			this.getView().setBindingContext(this._oContext);
 		},
         _onCreateSuccess: function(oRequest){
         	var sId = oRequest.Zdocnr;

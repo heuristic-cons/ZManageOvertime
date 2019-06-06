@@ -1,6 +1,34 @@
 {
   "run": [
     {
+      "filePath": "/ZManageOvertime/webapp/Component.js",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": "snapshot",
+      "ui5VerSource": null,
+      "isDefaultVersion": 1,
+      "urlParameters": [
+        {
+          "paramName": "",
+          "paramValue": "",
+          "paramActive": false
+        },
+        {
+          "paramName": "",
+          "paramValue": "",
+          "paramActive": false
+        }
+      ],
+      "hashParameter": "",
+      "_metadata": {
+        "id": "9096565",
+        "runnerId": "fiorirunner",
+        "displayName": "App as Fiori Component",
+        "lastRunTimeStamp": 1559833362817
+      }
+    },
+    {
       "filePath": "/ZManageOvertime/webapp/test/flpSandbox.html",
       "previewMode": 1,
       "dataMode": 1,
@@ -134,34 +162,6 @@
         "id": "7629638",
         "runnerId": "webapprunner",
         "displayName": "Test Suite (Unit, OPA)"
-      }
-    },
-    {
-      "filePath": "/ZManageOvertime/webapp/Component.js",
-      "previewMode": 1,
-      "dataMode": 1,
-      "workspace": "withoutWorkspace",
-      "ui5ActiveVersion": "snapshot",
-      "ui5VerSource": null,
-      "isDefaultVersion": 1,
-      "urlParameters": [
-        {
-          "paramName": "",
-          "paramValue": "",
-          "paramActive": false
-        },
-        {
-          "paramName": "",
-          "paramValue": "",
-          "paramActive": false
-        }
-      ],
-      "hashParameter": "",
-      "_metadata": {
-        "id": "9096565",
-        "runnerId": "fiorirunner",
-        "displayName": "App as Fiori Component",
-        "lastRunTimeStamp": 1559290741494
       }
     }
   ]

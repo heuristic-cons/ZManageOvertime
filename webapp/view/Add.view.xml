@@ -14,7 +14,7 @@
 		<semantic:content>
 			<smartform:SmartForm
 				id="form"
-				editable="true"
+				editable="{ZEditable}"
 				title="{i18n>addFormTitle}"
 				class="sapUiResponsiveMargin">
 				<smartform:Group
@@ -57,8 +57,8 @@
 			</smartform:SmartForm>
 		</semantic:content>
 		<semantic:saveAction>
-			<!--<semantic:SaveAction id="save" press="onSave" enabled="{ZSaveEnabled}"/>-->
-			<semantic:SaveAction id="save" press="onSave" enabled="true"/>
+			<semantic:SaveAction id="save" press="onSave" enabled="{ZSaveEnabled}"/>
+			<!--<semantic:SaveAction id="save" press="onSave" enabled="true"/>-->
 		</semantic:saveAction>
 		<semantic:cancelAction>
 			<semantic:CancelAction id="cancel" press="onCancel"/>
