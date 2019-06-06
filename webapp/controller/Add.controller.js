@@ -66,19 +66,23 @@ sap.ui.define([
 				Zename             : "",
 				Zuname             : "",
 				ZstatText          : "",*/
-				ZSaveEnabled       : "X",
-				ZSubmitEnabled     : "X"
+/*				ZSaveEnabled       : "X",
+				ZSubmitEnabled     : "X"*/
 			};
 			// create new entry in the model
 			var oModel = this.getModel();
 			var oContext = oModel.createEntry("/OT_requestSet", {
-				properties: oProperties
+				properties: oProperties,
+                success: this._onCreateSuccess.bind(this)				
 			});
 			
 			// bind the view to the new entry
 			this.getView().setBindingContext(oContext);
 		},
-
+        _onCreateSuccess: function(oRequest){
+        	var sId = oRequest.Zdocnr;
+        	this.getRouter().navTo("object", {objectId: sId},true );
+        },
 		/**
 		 * Event handler for navigating back.
 		 * It checks if there is a history entry. If yes, history.go(-1) will happen.

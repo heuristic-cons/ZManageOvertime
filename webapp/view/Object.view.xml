@@ -52,7 +52,7 @@
 		<semantic:content>
 			<smartform:SmartForm
 				id="form"
-				editable="{ZEditable}"
+				editable="{true}"				
 				title="{i18n>addFormTitle}"
 				class="sapUiResponsiveMargin">
 				<smartform:Group
