@@ -1,60 +1,36 @@
-<mvc:View
-	controllerName="com.getronics.hr.ZManageOvertime.controller.Add"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:semantic="sap.m.semantic"
-	xmlns:smartfield="sap.ui.comp.smartfield"
-	xmlns:smartform="sap.ui.comp.smartform"
-	xmlns="sap.m">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:smartfield="sap.ui.comp.smartfield" xmlns:smartform="sap.ui.comp.smartform" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="com.getronics.hr.ZManageOvertime.controller.Add">
 
-	<semantic:FullscreenPage
-		id="page"
-		title="{i18n>addPageTitle}"
-		showNavButton="true"
-		navButtonPress="onNavBack">
-		<semantic:content>
-			<smartform:SmartForm
-				id="form"
-				editable="{ZEditable}"
-				title="{i18n>addFormTitle}"
-				class="sapUiResponsiveMargin">
-				<smartform:Group
-					id="formGroup"
-					label="{i18n>formGroupLabel}">
+	<semantic:FullscreenPage id="page" title="{i18n>addPageTitle}" showNavButton="true" navButtonPress="onNavBack">
+		<semantic:content>				
+			<smartform:SmartForm id="form" editable="{ZEditable}" title="{i18n>addFormTitle}" class="sapUiResponsiveMargin">
+				<smartform:Group id="formGroup" label="{i18n>formGroupLabel}">
 					<smartform:GroupElement label="AttType">
-						<smartfield:SmartField
-							id="attendType"
-							value="{ZzAttType}">
+						<smartfield:SmartField id="attendType" value="{ZzAttType}">
 						</smartfield:SmartField>
 					</smartform:GroupElement>
 					<smartform:GroupElement>
-						<smartfield:SmartField
-							id="dateFrom"
-							value="{ZzDateFrom}">
+						<smartfield:SmartField id="dateFrom" value="{ZzDateFrom}">
 						</smartfield:SmartField>
 					</smartform:GroupElement>
 					<smartform:GroupElement>
-						<smartfield:SmartField
-							id="timeFrom"
-							value="{ZzTimeFrom}">
+						<smartfield:SmartField id="timeFrom" value="{ZzTimeFrom}">
 						</smartfield:SmartField>
 					</smartform:GroupElement>					
 					<smartform:GroupElement>
-						<smartfield:SmartField
-							id="dateTo"
-							value="{ZzDateTo}"/>
+						<smartfield:SmartField id="dateTo" value="{ZzDateTo}"/>
 					</smartform:GroupElement>
 					<smartform:GroupElement>
-						<smartfield:SmartField
-							id="timeTo"
-							value="{ZzTimeTo}"/>
+						<smartfield:SmartField id="timeTo" value="{ZzTimeTo}"/>
 					</smartform:GroupElement>
 					<smartform:GroupElement>
-						<smartfield:SmartField
-							id="note"
-							value="{ZzNote}"/>
+						<smartfield:SmartField id="note" value="{ZzNote}"/>
 					</smartform:GroupElement>					
 				</smartform:Group>
-			</smartform:SmartForm>
+			</smartform:SmartForm>				
+			<ComboBox xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:smartfield="sap.ui.comp.smartfield" xmlns:smartform="sap.ui.comp.smartform" xmlns:core="sap.ui.core" xmlns="sap.m" change="onAttSel"  items="{      path: '/OT_typesSet',      sorter: { path: 'OvertimeType' }     }" id="__box1">				
+			    <core:Item xmlns:core="sap.ui.core" key="{OvertimeType}" text="{OvertimeType} - {OtHelp}"/>				
+			    				
+			</ComboBox>
 		</semantic:content>
 		<semantic:saveAction>
 			<semantic:SaveAction id="save" press="onSave" enabled="{ZSaveEnabled}"/>
@@ -63,5 +39,8 @@
 		<semantic:cancelAction>
 			<semantic:CancelAction id="cancel" press="onCancel"/>
 		</semantic:cancelAction>
+	<semantic:positiveAction>
+	    <semantic:PositiveAction text="{i18n>submitButton}" id="submit" press="onSubmit"/>
+	</semantic:positiveAction>
 	</semantic:FullscreenPage>
 </mvc:View>

@@ -32,8 +32,23 @@ sap.ui.define([
 		 * @public
 		 */
 		onSave: function() {
+			var oModel = this.getModel();
+			
 			this.getModel().submitChanges();
 		},
+
+        onSubmit: function() {
+        	
+        },
+
+       onAttSel: function(oEvent) {
+			var oValidatedComboBox = oEvent.getSource(),
+				sSelectedKey = oValidatedComboBox.getSelectedKey(),
+				sValue = oValidatedComboBox.getValue();
+				var oModel = this.getModel();
+				var path = this._oContext.sPath + "/ZzAttType";
+		        oModel.setProperty( path, sSelectedKey);
+       },
 
 		/* =========================================================== */
 		/* event handlers                                              */
