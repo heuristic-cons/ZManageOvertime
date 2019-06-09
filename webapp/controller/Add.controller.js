@@ -1,7 +1,10 @@
 sap.ui.define([
 	"com/getronics/hr/ZManageOvertime/controller/BaseController",
-	"sap/ui/core/routing/History"
-], function(BaseController, History) {
+	"sap/ui/core/routing/History",
+	"sap/m/MessagePopover",
+	"sap/m/MessageItem",
+	"sap/m/MessageToast"	
+], function(BaseController, History, MessagePopover, MessageItem, MessageToast) {
 	"use strict"; 
 
 	return BaseController.extend("com.getronics.hr.ZManageOvertime.controller.Add", {
@@ -56,7 +59,9 @@ sap.ui.define([
                 path = this._oContext.sPath + "/ZaatypeText";		        
                 oModel.setProperty( path, sValue);
        },
-
+       customFooterContent: function(oEvent) {
+       	
+       }, 
 		/* =========================================================== */
 		/* event handlers                                              */
 		/* =========================================================== */
@@ -83,7 +88,32 @@ sap.ui.define([
 		},
         _onCreateSuccess: function(oRequest){
         	var sId = oRequest.Zdocnr;
+        	if (sId !== "0000000000"){ 
         	this.getRouter().navTo("object", {objectId: sId},true );
+        	}
+        	else {
+        	 var oModel = this.getView().getModel();
+			 var path = this._oContext.sPath + "/Error1";
+			 var error = oModel.getProperty(path);
+			 var oMessageTemplate = new MessageItem({
+					type: 'Error',
+					title: 'Error Message',
+					activeTitle: "",
+					description: error,
+					subtitle: '',
+					counter: 1
+				});
+
+	var oMessagePopover = new MessagePopover({
+		items: {
+			path: '/',
+			template: oMessageTemplate
+		},
+		activeTitlePress: function () {
+			MessageToast.show('Active title is pressed');
+		}
+	});			 
+        	}
         },
 		/**
 		 * Event handler for navigating back.

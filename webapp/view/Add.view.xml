@@ -42,6 +42,14 @@
 				</smartform:Group>
 			</smartform:SmartForm>				
 		</semantic:content>
+		
+		<semantic:customFooterContent>
+			<Toolbar>
+				<Button icon="sap-icon://message-popup" text="{/messagesLength}" type="Emphasized"
+						press="onhandleMessage" enabled="{Zerror}"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</semantic:customFooterContent>		
 		<semantic:saveAction>
 			<semantic:SaveAction id="save" press="onSave" enabled="{ZSaveEnabled}"/>
 			<!--<semantic:SaveAction id="save" press="onSave" enabled="true"/>--> 
