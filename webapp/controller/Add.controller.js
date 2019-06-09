@@ -32,8 +32,10 @@ sap.ui.define([
 		 * @public
 		 */
 		onSave: function() {
-			var oModel = this.getModel();
-			
+		   var sValue = "";
+		   var oModel = this.getView().getModel();
+           var path = this._oContext.sPath + "/ZaatypeText";		        
+           oModel.setProperty( path, sValue);			
 			this.getModel().submitChanges();
 		},
 
@@ -45,9 +47,14 @@ sap.ui.define([
 			var oValidatedComboBox = oEvent.getSource(),
 				sSelectedKey = oValidatedComboBox.getSelectedKey(),
 				sValue = oValidatedComboBox.getValue();
-				var oModel = this.getModel();
+				var oModel = this.getView().getModel();
 				var path = this._oContext.sPath + "/ZzAttType";
 		        oModel.setProperty( path, sSelectedKey);
+		        path = "/OT_typesSet('" + sSelectedKey + "')/OtHelp";
+		        
+		        sValue = oModel.getProperty( path ); 
+                path = this._oContext.sPath + "/ZaatypeText";		        
+                oModel.setProperty( path, sValue);
        },
 
 		/* =========================================================== */

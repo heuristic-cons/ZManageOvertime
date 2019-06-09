@@ -4,16 +4,12 @@
 		<semantic:content>
         <form:SimpleForm xmlns:form="sap.ui.layout.form" id="simpleFormChange" title="{i18n>addFormTitle}">
 	    <form:content>			
-			<Label xmlns:mvc="sap.ui.core.mvc" 
-			       xmlns:semantic="sap.m.semantic" 
-			       xmlns:smartfield="sap.ui.comp.smartfield" 
-			       xmlns:smartform="sap.ui.comp.smartform" 
-			       xmlns:core="sap.ui.core" xmlns="sap.m" 
-			       xmlns:form="sap.ui.layout.form" 
-			       text="{/#OT_request/ZzAttType/@sap:label}" width="100%" id="attTypeLbl"/>			
+			<Label xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:smartfield="sap.ui.comp.smartfield" xmlns:smartform="sap.ui.comp.smartform" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" text="{/#OT_request/ZzAttType/@sap:label}" width="100%" id="attTypeLbl"/>			
 			<ComboBox xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:smartfield="sap.ui.comp.smartfield" xmlns:smartform="sap.ui.comp.smartform" xmlns:core="sap.ui.core" xmlns="sap.m" change="onAttSel" items="{      path: '/OT_typesSet',      sorter: { path: 'OvertimeType' }     }" id="__box1">				
 			    <core:Item xmlns:core="sap.ui.core" key="{OvertimeType}" text="{OvertimeType} - {OvertimeText}" tooltip="{OtHelp}"/>				
 			</ComboBox>
+			<Label xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:smartfield="sap.ui.comp.smartfield" xmlns:smartform="sap.ui.comp.smartform" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" text="{/#OT_request/ZaatypeText/@sap:label}" width="100%" id="oTHelpLbl"/>
+			<TextArea width="100%" id="attTypeTxt" editable="false" value="{ZaatypeText}"/>		
 	    </form:content>
 	    </form:SimpleForm>				
 			<smartform:SmartForm id="form" editable="{ZEditable}" title="{i18n>addFormDetails}" class="sapUiResponsiveMargin">
@@ -22,6 +18,10 @@
 						<smartfield:SmartField id="attendType" value="{ZzAttType}" editable="false">
 						</smartfield:SmartField>
 					</smartform:GroupElement>
+<!--					<smartform:GroupElement>
+						<smartfield:SmartField id="attendTypeTxt" value="{ZaatypeText}" editable="false">
+						</smartfield:SmartField>
+					</smartform:GroupElement>-->			
 					<smartform:GroupElement>
 						<smartfield:SmartField id="dateFrom" value="{ZzDateFrom}">
 						</smartfield:SmartField>
