@@ -22,6 +22,23 @@ sap.ui.define([
 			// Register to the add route matched
 			this.getRouter().getRoute("add").attachPatternMatched(this._onRouteMatched, this);
 			// this.getView().byId("page").bindElement("/OT_request('4')");
+			this._oMessageTemplate = new MessageItem({
+				type: "{type}",
+				title: "{title}",
+				activeTitle: "{active}",
+				description: "{description}",
+				subtitle: "{subtitle}",
+				counter: "{counter}"
+			});			
+			this._oMessagePopover = new MessagePopover({
+				items: {
+					path: "/",
+					template: this._oMessageTemplate
+				},
+				activeTitlePress: function() {
+					
+				}
+			});			
 		},
 		/**
 		 * Event handler for the cancel action
@@ -43,7 +60,15 @@ sap.ui.define([
 		},
 
 		onSubmit: function() {
-
+           var oModel = this.getView().getModel();
+           var path = this._oContext.sPath + "/Zdocnr";
+           var zdocnr = oModel.getProperty(path);
+           oModel.callFunction("SubmitRequest", // function import name
+                                             "POST", // http method
+                              {"Zdocnr" : zdocnr  }, // function import parameters
+                                               null,        
+                               function(oData, response) { }, // callback function for success
+                               function(oError){} ); // callback function for error           
 		},
 
 		onAttSel: function(oEvent) {
@@ -92,77 +117,56 @@ sap.ui.define([
 				this.getRouter().navTo("object", {
 					objectId: sId
 				}, true);
-			} else {
-				var oModel = this.getView().getModel();
-				var path = this._oContext.sPath + "/Error1";
-				var error = oModel.getProperty(path);
-				var oMessageTemplate = new MessageItem({
-					type: "Error",
-					title: "Error Message",
-					activeTitle: "",
-					description: error,
-					subtitle: "",
-					counter: 1
-				});
-
-			}
+			} 
 		},
 		onhandleMessage: function(oEvent) {
 			var oModel = this.getView().getModel();
 			var path = this._oContext.sPath + "/Error1";
 			var error = oModel.getProperty(path);
 
-			var oMessageTemplate = new MessageItem({
-				type: "{type}",
-				title: "{title}",
-				activeTitle: "{active}",
-				description: "{description}",
-				subtitle: "{subtitle}",
-				counter: "{counter}"
-			});
-			var count = 0;
-			var index = 0;
+			this.count = 0;
+
 			if (error !== "") {
-				count = count + 1;
-				
+				this.count = this.count + 1;
 				var oMessage = [{
 					type: "Error",
 					title: "Error message",
 					active: true,
 					description: error,
 					subtitle: "",
-					counter: count
+					counter: this.count
 				}];
 			}
 			path = this._oContext.sPath + "/Error2";
 			error = oModel.getProperty(path);
-			if (error !== "") {
-				count = count + 1;
-				index = index + 1;
+			this.addMessage(error, oMessage);
+			path = this._oContext.sPath + "/Error3";
+			error = oModel.getProperty(path);
+			this.addMessage(error, oMessage);			
+			path = this._oContext.sPath + "/Error4";
+			error = oModel.getProperty(path);
+			this.addMessage(error, oMessage);			
+	
+			
+			var oMsgModel = new sap.ui.model.json.JSONModel();
+			oMsgModel.setData(oMessage);
+
+			this._oMessagePopover.setModel(oMsgModel);
+			this._oMessagePopover.toggle(oEvent.getSource());
+		},
+		addMessage: function(msg, oMessage) {
+			if (msg !== "") {
+				this.count = this.count + 1;
 				 oMessage.push(
 				 {
 					type: "Error",
 					title: "Error message",
 					active: true,
-					description: error,
+					description: msg,
 					subtitle: "",
-					counter: count
+					counter: this.count
 				});
-			}			
-			
-			var oMsgModel = new sap.ui.model.json.JSONModel();
-			oMsgModel.setData(oMessage);
-			var oMessagePopover = new MessagePopover({
-				items: {
-					path: "/",
-					template: oMessageTemplate
-				},
-				activeTitlePress: function() {
-					MessageToast.show("Active title is pressed");
-				}
-			});
-			oMessagePopover.setModel(oMsgModel);
-			oMessagePopover.toggle(oEvent.getSource());
+			}					  	
 		},
 		/**
 		 * Event handler for navigating back.

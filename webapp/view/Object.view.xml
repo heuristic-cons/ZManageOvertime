@@ -1,54 +1,12 @@
 <mvc:View xmlns="sap.m" 
           xmlns:mvc="sap.ui.core.mvc" 
-          xmlns:semantic="sap.f.semantic" 
+          xmlns:semantic="sap.m.semantic" 
 	      xmlns:smartfield="sap.ui.comp.smartfield"
 		  xmlns:smartform="sap.ui.comp.smartform"          
           xmlns:footerbar="sap.ushell.ui.footerbar" 
           controllerName="com.getronics.hr.ZManageOvertime.controller.Object">
 
-	<semantic:SemanticPage id="page" headerPinnable="false" toggleHeaderOnTitleClick="false" busy="{objectView>/busy}" busyIndicatorDelay="{objectView>/delay}">
-
-		<semantic:titleHeading>
-			<Title text="{Zdocnr} {ZaatypeText}"/>
-		</semantic:titleHeading>
-
-		<semantic:headerContent>
-			<ObjectNumber>
-			</ObjectNumber>
-		</semantic:headerContent>
-		
-	
- <!--       <form:SimpleForm xmlns:form="sap.ui.layout.form" id="simpleFormChange">
-	       
-	    <form:content>
-	       
-	        <Label text="{/#OT_request/ZzAttType/@sap:label}" id="__label0"/>
-	       
-	        <Input value="{ZzAttType}" width="100%" id="__input0" editable="false"/>
-	       
-	        <Label text="{/#OT_request/ZzDateFrom/@sap:label}" id="__label1"/>
-	       
-	        <DatePicker value="{ZzDateFrom}" width="100%" id="__picker0"/>
-	       
-	        <Label text="{/#OT_request/ZzTimeFrom/@sap:label}" id="__label3"/>
-	       
-	        <TimePicker value="{ZzTimeFrom}" displayFormat="h:mm:ss a" localeId="en-US" placeholderSymbol="-" mask="h9:59:59 AB" id="__picker2"/>
-	       
-	        <Label text="{/#OT_request/ZzDateTo/@sap:label}" id="__label4"/>
-	       
-	        <DatePicker value="{ZzDateTo}" width="100%" id="__picker3"/>
-	       
-	        <Label text="{/#OT_request/ZzTimeTo/@sap:label}" id="__label5"/>
-	       
-	        <TimePicker value="{ZzTimeTo}" displayFormat="h:mm:ss a" localeId="en-US" placeholderSymbol="-" mask="h9:59:59 AB" id="__picker4"/>
-	       
-	        <Label text="{/#OT_request/ZzNote/@sap:label}" id="__label6"/>
-	       
-	       <TextArea value="{ZzNote}" id="__area1" maxLength="255" />
-	       
-	    </form:content>
-	       
-	    </form:SimpleForm>			-->
+    <semantic:FullscreenPage id="page" title="{Zdocnr} {ZaatypeText}" showNavButton="true" navButtonPress="onNavBack">	
 		<semantic:content>
 			<smartform:SmartForm
 				id="form"
@@ -107,7 +65,23 @@
 		<semantic:saveAsTileAction>
 			<footerbar:AddBookmarkButton id="shareTile" title="{objectView>/saveAsTileTitle}"/>
 		</semantic:saveAsTileAction>
-
-	</semantic:SemanticPage>
+		<semantic:customFooterContent>
+			<Toolbar>
+				<Button icon="sap-icon://message-popup" text="{/messagesLength}" type="Emphasized"
+						press="onhandleMessage" enabled="{Zerror}"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</semantic:customFooterContent>		
+		<semantic:saveAction>
+			<semantic:SaveAction id="save" press="onSave" enabled="{ZSaveEnabled}"/>
+			<!--<semantic:SaveAction id="save" press="onSave" enabled="true"/>--> 
+		</semantic:saveAction>
+		<semantic:cancelAction>
+			<semantic:CancelAction id="cancel" press="onCancel"/>
+		</semantic:cancelAction>
+	<semantic:positiveAction>
+	    <semantic:PositiveAction text="{i18n>submitButton}" id="submit" press="onSubmit" enabled="{ZSubmitEnabled}"  />
+	</semantic:positiveAction>
+	</semantic:FullscreenPage>
 
 </mvc:View>

@@ -67,8 +67,43 @@ sap.ui.define([
 					});
 				oShareDialog.open();
 			},
+		onNavBack: function() {
+			// discard new product from model.
+			this.getModel().deleteCreatedEntry(this._oContext);
 
+			var oHistory = History.getInstance(),
+				sPreviousHash = oHistory.getPreviousHash();
 
+			if (sPreviousHash !== undefined) {
+				// The history contains a previous entry
+				history.go(-1);
+			} else {
+				// Otherwise we go backwards with a forward history
+				var bReplace = true;
+				this.getRouter().navTo("worklist", {}, bReplace);
+			}
+		},
+		onCancel: function() {
+			this.onNavBack();
+		},
+		onSave: function() {
+			var sValue = "";
+			var oModel = this.getView().getModel();
+			var path = this._oContext.sPath + "/ZaatypeText";
+			oModel.setProperty(path, sValue);
+			this.getModel().submitChanges();
+		},		
+		onSubmit: function() {
+           var oModel = this.getView().getModel();
+           var path = this._oContext.sPath + "/Zdocnr";
+           var zdocnr = oModel.getProperty(path);
+           oModel.callFunction("SubmitRequest", // function import name
+                                             "POST", // http method
+                              {"Zdocnr" : zdocnr  }, // function import parameters
+                                               null,        
+                               function(oData, response) { }, // callback function for success
+                               function(oError){} ); // callback function for error           
+		},
 			/* =========================================================== */
 			/* internal methods                                            */
 			/* =========================================================== */
@@ -86,6 +121,7 @@ sap.ui.define([
 						Zdocnr :  sObjectId
 					});
 					this._bindView("/" + sObjectPath);
+
 				}.bind(this));
 			},
 

@@ -1,6 +1,12 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:smartfield="sap.ui.comp.smartfield" xmlns:smartform="sap.ui.comp.smartform" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="com.getronics.hr.ZManageOvertime.controller.Add">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" 
+          xmlns:semantic="sap.m.semantic" 
+          xmlns:smartfield="sap.ui.comp.smartfield"
+          xmlns:smartform="sap.ui.comp.smartform" 
+          xmlns:core="sap.ui.core" 
+          xmlns="sap.m" 
+          controllerName="com.getronics.hr.ZManageOvertime.controller.Add">
 
-	<semantic:FullscreenPage id="page" title="{i18n>addPageTitle}" showNavButton="true" navButtonPress="onNavBack">
+	<semantic:FullscreenPage id="page" title="{i18n>addPageTitle}" showNavButton="true" navButtonPress="onNavBack">	
 		<semantic:content>
         <form:SimpleForm xmlns:form="sap.ui.layout.form" id="simpleFormChange" title="{i18n>addFormTitle}">
 	    <form:content>			
@@ -58,7 +64,7 @@
 			<semantic:CancelAction id="cancel" press="onCancel"/>
 		</semantic:cancelAction>
 	<semantic:positiveAction>
-	    <semantic:PositiveAction text="{i18n>submitButton}" id="submit" press="onSubmit"/>
+	    <semantic:PositiveAction text="{i18n>submitButton}" id="submit" press="onSubmit" enabled="{ZSubmitEnabled}"  />
 	</semantic:positiveAction>
 	</semantic:FullscreenPage>
 </mvc:View>
