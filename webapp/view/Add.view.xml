@@ -3,7 +3,7 @@
           xmlns:smartfield="sap.ui.comp.smartfield"
           xmlns:smartform="sap.ui.comp.smartform" 
           xmlns:core="sap.ui.core" 
-          xmlns="sap.m" 
+          xmlns="sap.m"  
           controllerName="com.getronics.hr.ZManageOvertime.controller.Add">
 
 	<semantic:FullscreenPage id="page" title="{i18n>addPageTitle}" showNavButton="true" navButtonPress="onNavBack">	

@@ -89,13 +89,13 @@ sap.ui.define([
 		onSave: function() {
 			var sValue = "";
 			var oModel = this.getView().getModel();
-			var path = this._oContext.sPath + "/ZaatypeText";
+			var path = this._oContext.sObjectPath + "/ZaatypeText";
 			oModel.setProperty(path, sValue);
 			this.getModel().submitChanges();
 		},		
 		onSubmit: function() {
            var oModel = this.getView().getModel();
-           var path = this._oContext.sPath + "/Zdocnr";
+           var path = this._oContext.sObjectPath + "/Zdocnr";
            var zdocnr = oModel.getProperty(path);
            oModel.callFunction("SubmitRequest", // function import name
                                              "POST", // http method
@@ -116,9 +116,14 @@ sap.ui.define([
 			 */
 			_onObjectMatched : function (oEvent) {
 				var sObjectId =  oEvent.getParameter("arguments").objectId;
+			// create default properties
+			var oProperties = {
+				Zaction: "MODIFY"
+			};				
 				this.getModel().metadataLoaded().then( function() {
-					var sObjectPath = this.getModel().createKey("OT_requestSet", {
-						Zdocnr :  sObjectId
+					 var sObjectPath = this.getModel().createKey("OT_requestSet", {
+						Zdocnr :  sObjectId,
+						properties: oProperties
 					});
 					this._bindView("/" + sObjectPath);
 

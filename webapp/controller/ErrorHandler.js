@@ -2,7 +2,7 @@ sap.ui.define([
 		"sap/ui/base/Object",
 		"sap/m/MessageBox"
 	], function (UI5Object, MessageBox) {
-		"use strict";
+		"use strict"; 
 
 		return UI5Object.extend("com.getronics.hr.ZManageOvertime.controller.ErrorHandler", {
 

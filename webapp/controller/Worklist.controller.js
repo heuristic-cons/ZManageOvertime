@@ -7,7 +7,7 @@ sap.ui.define([
 		"sap/ui/model/Filter",
 		"sap/ui/model/FilterOperator"
 	], function (BaseController, JSONModel, History, formatter, Filter, FilterOperator) {
-		"use strict";
+		"use strict"; 
 
 		return BaseController.extend("com.getronics.hr.ZManageOvertime.controller.Worklist", {
 

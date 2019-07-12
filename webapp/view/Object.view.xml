@@ -7,7 +7,7 @@
           controllerName="com.getronics.hr.ZManageOvertime.controller.Object">
 
     <semantic:FullscreenPage id="page" title="{Zdocnr} {ZaatypeText}" showNavButton="true" navButtonPress="onNavBack">	
-		<semantic:content>
+		<semantic:content> 
 			<smartform:SmartForm
 				id="form"
 				editable="{true}"				

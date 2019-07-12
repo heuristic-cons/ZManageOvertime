@@ -1,7 +1,7 @@
 sap.ui.define([
 		"com/getronics/hr/ZManageOvertime/controller/BaseController"
 	], function (BaseController) {
-		"use strict";
+		"use strict"; 
 
 		return BaseController.extend("com.getronics.hr.ZManageOvertime.controller.NotFound", {
 

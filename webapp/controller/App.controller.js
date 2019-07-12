@@ -2,7 +2,7 @@ sap.ui.define([
 		"com/getronics/hr/ZManageOvertime/controller/BaseController",
 		"sap/ui/model/json/JSONModel"
 	], function (BaseController, JSONModel) {
-		"use strict";
+		"use strict"; 
 
 		return BaseController.extend("com.getronics.hr.ZManageOvertime.controller.App", {
 
